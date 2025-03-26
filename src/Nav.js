@@ -19,7 +19,7 @@ const Nav = () => {
     );
 
     setSearchResults(filterredResults.reverse());
-  }, [posts, search]);
+  }, [posts, search, setSearchResults]);
 
   return (
     <nav className="Nav">

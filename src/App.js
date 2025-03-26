@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Header from "./Header";
 import Nav from "./Nav";
 import Footer from "./Footer";
@@ -10,7 +10,7 @@ import Missing from "./Missing";
 import EditPost from "./EditPost.js";
 import { useEffect } from "react";
 import useAxiosFetch from "./hooks/useAxiosFetch.js";
-import { action, useStoreActions } from "easy-peasy";
+import { useStoreActions } from "easy-peasy";
 
 function App() {
   const setPosts = useStoreActions((actions) => actions.setPosts);

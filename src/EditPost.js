@@ -4,7 +4,6 @@ import { format } from "date-fns";
 import { useStoreState, useStoreActions } from "easy-peasy";
 
 const EditPost = () => {
-  const posts = useStoreState((state) => state.posts);
   const editTitle = useStoreState((state) => state.editTitle);
   const editBody = useStoreState((state) => state.editBody);
 
