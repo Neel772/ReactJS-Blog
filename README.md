@@ -67,3 +67,7 @@ npx json-server -p 3500 -w data/db.json
 ## Deploy Website
 
 [ReactJS Blog](https://dashing-haupia-dde149.netlify.app/)
+
+(run the server from local network by cmd:
+`npx json-server -p 3500 -w data/db.json`
+)
