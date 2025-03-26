@@ -1,7 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Header from "./Header";
-import Nav from "./Nav";
-import Footer from "./Footer";
+import Layout from "./Layout.js";
 import Home from "./Home";
 import NewPost from "./NewPost";
 import PostPage from "./PostPage";
@@ -23,22 +21,21 @@ function App() {
   }, [data, setPosts]);
 
   return (
-    <div className="App">
-      <Header title="React Js Blog" />
-      <Nav />
-      <Routes>
+    <Routes>
+      <Route path="/" element={<Layout />}>
         <Route
-          path="/"
+          index
           element={<Home isLoading={isLoading} fetchError={fetchError} />}
         />
-        <Route path="/post" element={<NewPost />} />
-        <Route path="/edit/:id" element={<EditPost />} />
-        <Route path="/post/:id" element={<PostPage />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/post">
+          <Route index element={<NewPost />} />
+          <Route path=":id" element={<EditPost />} />
+          <Route path=":id" element={<PostPage />} />
+        </Route>
+        <Route path="about" element={<About />} />
         <Route path="*" element={<Missing />} />
-      </Routes>
-      <Footer />
-    </div>
+      </Route>
+    </Routes>
   );
 }
 
